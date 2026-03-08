@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Resume Analyzer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>AI-Based Resume Analyzer</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="resume" accept=".docx" required>
+        <button type="submit">Analyze Resume</button>
+    </form>
+
+    {% if score %}
+    <div class="result">
+        <h3>Resume: {{ filename }}</h3>
+        <h4>Score: {{ score }}/100</h4>
+
+        <h4>Concise Notes:</h4>
+        <p>{{ summary }}</p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
